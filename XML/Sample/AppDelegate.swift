@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let xml = XML(path: Bundle.main.url(forResource: "sample", withExtension: "xml")!)
-        print(xml!)
+        let xml = XML(path: Bundle.main.url(forResource: "sample", withExtension: "xml")!)!
+        print(xml)
+        print(xml[3]["author"]!.content!)
+        print(xml[3]["title"]!.content!)
         
         return true
     }
